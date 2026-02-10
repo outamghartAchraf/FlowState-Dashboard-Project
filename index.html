@@ -55,6 +55,47 @@
             </p>
           </div>
         </section>
+       
+         <div class="flex flex-col gap-6 lg:flex-[1]">
+                    <section class="bg-white rounded-xl shadow p-4 sm:p-6">
+          <h2 class="text-base sm:text-lg font-semibold mb-3">Timer Pomodoro</h2>
+          <p class="text-xs text-gray-400 mb-4">
+            <span id="cycle-count">0</span> cycle(s) terminé(s)
+          </p>
+
+          <div class="flex items-center justify-center gap-2 mb-4 text-sm" id="session-status">
+            <i class="fa-solid fa-circle-info text-blue-600"></i>
+            <span class="text-blue-600">Session de travail</span>
+          </div>
+
+          <div class="text-5xl sm:text-6xl font-bold text-center mb-6" id="timer-display">25:00</div>
+
+          <div class="flex justify-center gap-3 mb-6">
+            <button id="start-btn" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 flex items-center gap-2 text-sm">
+              <i class="fa-solid fa-play"></i>
+              <span>Démarrer</span>
+            </button>
+            <button id="reset-btn" class="bg-gray-100 hover:bg-gray-200 px-4 py-2.5 rounded-lg" title="Réinitialiser">
+              <i class="fa-solid fa-rotate-right text-gray-600"></i>
+            </button>
+            <button id="skip-btn" class="bg-gray-100 hover:bg-gray-200 px-4 py-2.5 rounded-lg" title="Passer">
+              <i class="fa-solid fa-forward-step text-gray-600"></i>
+            </button>
+          </div>
+
+          <div class="flex justify-center gap-12 text-center">
+            <div>
+              <p class="text-2xl font-bold text-blue-600">25</p>
+              <p class="text-xs text-gray-500">min de travail</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-green-600">5</p>
+              <p class="text-xs text-gray-500">min de pause</p>
+            </div>
+          </div>
+        </section>
+         </div>
+
       </div>
     </main>
   </body>
