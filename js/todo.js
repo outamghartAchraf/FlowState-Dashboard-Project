@@ -15,5 +15,11 @@ export const  TodoManager = () => {
     return true;
     }
 
+    const deleteTask = (id) => {
+        tasks = tasks.filter((task) => task.id !== id);
+
+    }
+
+
 
 }
