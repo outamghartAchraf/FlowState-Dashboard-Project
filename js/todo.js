@@ -21,5 +21,12 @@ export const  TodoManager = () => {
     }
 
 
+    const toggleTask = (taskid) => {
+        const task = tasks.find((task) => task.id === taskid);
+        if(task) {
+            task.completed = !task.completed
+        }
+    }
+
 
 }
