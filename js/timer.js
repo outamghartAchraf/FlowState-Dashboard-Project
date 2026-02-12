@@ -1,4 +1,5 @@
- 
+ const alarmSound = new Audio('/assets/alarm.mp3');   
+
 
 export function initTimer() {
   const display = document.getElementById('timer-display');
