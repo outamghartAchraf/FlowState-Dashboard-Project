@@ -35,4 +35,37 @@ export function initTimer() {
     }
   }
 
+
+    function startTimer() {
+    if (interval) return;
+    updateStartButton(true);
+
+    interval = setInterval(() => {
+      if (time > 0) {
+        time--;
+        updateDisplay();
+      } else {
+        clearInterval(interval);
+        interval = null;
+          alarmSound.play();
+
+    ت
+        if (isWork) cycles++;
+        isWork = !isWork;
+        time = isWork ? workTime : breakTime;
+        updateDisplay();
+        cycleCountEl.textContent = cycles;
+
+         
+        startTimer();
+      }
+    }, 1000);
+  }
+
+  function pauseTimer() {
+    clearInterval(interval);
+    interval = null;
+    updateStartButton(false);
+  }gi
+
 }
