@@ -73,5 +73,10 @@ function render() {
   }
 
   
-
+  const completed = tasks.filter(t => t.done).length;
+  document.getElementById('completed-count').textContent = completed;
+  document.getElementById('total-count').textContent = tasks.length;
+  document.getElementById('stat-active').textContent = tasks.filter(t => !t.done).length;
+  document.getElementById('stat-completed').textContent = completed;
+  document.getElementById('stat-success').textContent = tasks.length ? Math.round((completed / tasks.length) * 100) + '%' : '0%';
 }
