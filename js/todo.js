@@ -54,3 +54,24 @@ function toggleTask(id) {
   render();
 }
 
+function deleteTask(id) {
+  tasks = tasks.filter(task => task.id !== id);
+  saveTasks(tasks);
+  render();
+}
+
+function render() {
+  const taskList = document.getElementById('task-list');
+  clearTasks(taskList);
+
+  const emptyDiv = document.getElementById('empty-state');
+  if (tasks.length === 0) {
+    if (emptyDiv) emptyDiv.classList.remove('hidden');
+  } else {
+    if (emptyDiv) emptyDiv.classList.add('hidden');
+    renderTasks(taskList, tasks);
+  }
+
+  
+
+}
