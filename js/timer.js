@@ -76,4 +76,16 @@ export function initTimer() {
     updateDisplay();
   }
 
+    function skipTimer() {
+    pauseTimer();
+    isWork = !isWork;
+    time = isWork ? workTime : breakTime;
+    if (!isWork) cycles++;
+    cycleCountEl.textContent = cycles;
+    updateDisplay();
+
+    console.log('work');
+  }
+
+
 }
