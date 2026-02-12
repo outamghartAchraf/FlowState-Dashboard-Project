@@ -22,7 +22,8 @@ export function initTimer() {
     sessionStatus.textContent = isWork ? 'Session de travail' : 'Pause';
   }
 
-    function updateStartButton(isRunning) {
+
+      function updateStartButton(isRunning) {
     if (!startBtn) return;
     if (isRunning) {
       startBtn.innerHTML = `<i class="fa-solid fa-pause"></i><span>Pause</span>`;
@@ -66,6 +67,13 @@ export function initTimer() {
     clearInterval(interval);
     interval = null;
     updateStartButton(false);
-  }gi
+  }
+
+    function resetTimer() {
+    pauseTimer();
+    isWork = true;
+    time = workTime;
+    updateDisplay();
+  }
 
 }
