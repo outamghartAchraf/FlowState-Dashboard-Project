@@ -3,7 +3,7 @@ import { renderTasks, clearTasks, renderEmptyState } from './ui.js';
 
 let tasks = loadTasks() || [];
 
-const isValidTask = (text) => /^[a-zA-Z0-9\s]+$/.test(text.trim());
+const isValidTask = (text) => /^[a-zA-Z0-6\s]+$/.test(text.trim());
 
 export function initTodo() {
   const taskInput = document.getElementById('task-input');
