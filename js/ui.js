@@ -32,7 +32,36 @@ export function renderTasks(container, tasks) {
   });
 
 // mobile first
- 
+   const navButtons = document.querySelectorAll(".nav-btn");
+      const pages = {
+        "tasks-page": document.getElementById("tasks-page"),
+        "timer-page": document.getElementById("timer-page"),
+        "stats-page": document.getElementById("stats-page")
+      };
+
+      function showPage(pageId) {
+        Object.values(pages).forEach((page) => page.classList.add("hidden"));
+        pages[pageId].classList.remove("hidden");
+
+        navButtons.forEach((btn) => {
+          if (btn.dataset.page === pageId) {
+            btn.classList.remove("text-gray-400");
+            btn.classList.add("text-blue-600");
+          } else {
+            btn.classList.remove("text-blue-600");
+            btn.classList.add("text-gray-400");
+          }
+        });
+      }
+
+      
+      showPage("tasks-page");
+
+      navButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          showPage(btn.dataset.page);
+        });
+      });
 }
 
 export function renderEmptyState(container) {
