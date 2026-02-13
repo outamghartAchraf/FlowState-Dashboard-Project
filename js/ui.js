@@ -8,18 +8,18 @@ export function renderTasks(container, tasks) {
     const li = document.createElement('div');
     li.className = 'flex items-center justify-between bg-gray-50 rounded-lg px-4 py-2';
 
-     const checkbox = document.createElement('input');
+    const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.className = 'task-checkbox mr-2';
     checkbox.dataset.taskId = task.id;
     checkbox.checked = task.done;
 
-     const span = document.createElement('span');
+    const span = document.createElement('span');
     span.textContent = task.text;
     span.className = task.done ? 'line-through text-gray-400' : '';
     span.classList.add('flex-1');
 
-     const delBtn = document.createElement('button');
+    const delBtn = document.createElement('button');
     delBtn.className = 'task-delete text-red-500 hover:text-red-700 ml-2';
     delBtn.dataset.taskId = task.id;
     delBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
@@ -30,6 +30,9 @@ export function renderTasks(container, tasks) {
 
     container.appendChild(li);
   });
+
+// mobile first
+ 
 }
 
 export function renderEmptyState(container) {

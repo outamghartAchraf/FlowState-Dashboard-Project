@@ -1,5 +1,4 @@
- const alarmSound = new Audio('/assets/alarm.mp3');   
-
+const alarmSound = new Audio('/assets/alarm.mp3');   
 
 export function initTimer() {
   const display = document.getElementById('timer-display');
@@ -9,7 +8,7 @@ export function initTimer() {
   const cycleCountEl = document.getElementById('cycle-count');
   const sessionStatus = document.getElementById('session-status').querySelector('span');
 
-    let workTime = 1 * 60; 
+  let workTime = 1 * 60; 
   let breakTime = 5 * 60; 
   let time = workTime;
   let interval = null;
@@ -23,8 +22,7 @@ export function initTimer() {
     sessionStatus.textContent = isWork ? 'Session de travail' : 'Pause';
   }
 
-
-      function updateStartButton(isRunning) {
+  function updateStartButton(isRunning) {
     if (!startBtn) return;
     if (isRunning) {
       startBtn.innerHTML = `<i class="fa-solid fa-pause"></i><span>Pause</span>`;
@@ -37,8 +35,7 @@ export function initTimer() {
     }
   }
 
-
-    function startTimer() {
+  function startTimer() {
     if (interval) return;
     updateStartButton(true);
 
@@ -51,7 +48,7 @@ export function initTimer() {
         interval = null;
           alarmSound.play();
 
-    ت
+    
         if (isWork) cycles++;
         isWork = !isWork;
         time = isWork ? workTime : breakTime;
@@ -70,14 +67,14 @@ export function initTimer() {
     updateStartButton(false);
   }
 
-    function resetTimer() {
+  function resetTimer() {
     pauseTimer();
     isWork = true;
     time = workTime;
     updateDisplay();
   }
 
-    function skipTimer() {
+  function skipTimer() {
     pauseTimer();
     isWork = !isWork;
     time = isWork ? workTime : breakTime;
@@ -89,4 +86,18 @@ export function initTimer() {
   }
 
 
+  startBtn.addEventListener('click', () => {
+    if (interval) {
+      pauseTimer();
+    } else {
+      startTimer();
+    }
+  });
+
+  resetBtn.addEventListener('click', resetTimer);
+  skipBtn.addEventListener('click', skipTimer);
+
+         
+  updateDisplay();
+  updateStartButton(false);
 }

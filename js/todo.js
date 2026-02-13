@@ -3,7 +3,7 @@ import { renderTasks, clearTasks, renderEmptyState } from './ui.js';
 
 let tasks = loadTasks() || [];
 
-const isValidTask = (text) => /^[a-zA-Z0-6\s]+$/.test(text.trim());
+const isValidTask = (text) => /^[a-zA-Z0-9\s]+$/.test(text.trim());
 
 export function initTodo() {
   const taskInput = document.getElementById('task-input');
@@ -39,7 +39,7 @@ export function initTodo() {
 
     if (target.closest('.task-delete')) {
       const btn = target.closest('.task-delete');
-      if (confirm('Voulez-vous vraiment supprimer cette tâche ?')) {
+      if (confirm('Voulez-vous vraiment supprimer cette tâche ')) {
         deleteTask(btn.dataset.taskId);
       }
     }
