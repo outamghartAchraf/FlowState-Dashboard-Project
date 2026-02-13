@@ -17,16 +17,16 @@
   </head>
   <body class="bg-gray-50 min-h-screen">
 
-    <!-- Header -->
+   
     <header class="bg-white shadow-sm px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-3">
       <i class="fa-solid fa-atom text-blue-600 text-xl"></i>
       <h1 class="text-lg sm:text-xl font-semibold">FlowState</h1>
     </header>
 
-    <!-- Main -->
+ 
     <main class="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
 
-      <!-- Statistiques (Desktop Only) -->
+      
       <section class="bg-white rounded-xl shadow p-6 sm:p-8 mb-8 hidden lg:block" id="stats-page">
         <h2 class="text-lg sm:text-xl font-semibold mb-6">Statistiques</h2>
 
@@ -63,17 +63,17 @@
         </div>
       </section>
 
-      <!-- Pages Container -->
+     
       <div class="flex flex-col lg:flex-row gap-6">
 
-        <!-- Tasks Page -->
+       
         <section class="bg-white rounded-xl shadow p-4 sm:p-6 lg:flex-[2] hidden lg:block" id="tasks-page">
           <h2 class="text-base sm:text-lg font-semibold mb-1">My Tâches</h2>
           <p class="text-xs sm:text-sm text-gray-400 mb-4">
             <span id="completed-count">0</span> /
             <span id="total-count">0</span> terminées
           </p>
-
+  
           <div class="flex flex-col sm:flex-row gap-2 mb-4">
             <input
               type="text"
@@ -90,7 +90,7 @@
             </button>
           </div>
 
-          <div id="task-list" class="space-y-2"></div>
+         <div id="task-list" class="space-y-2 max-h-80 overflow-y-auto lg:max-h-full lg:overflow-y-visible"></div>
 
           <div id="empty-state" class="hidden text-center py-12">
             <i class="fa-solid fa-check-circle text-green-500 text-6xl mb-4"></i>
@@ -101,10 +101,10 @@
           </div>
         </section>
 
-        <!-- Right Side: Timer + Stats -->
+        
         <div class="flex flex-col gap-6 lg:flex-[1]">
 
-          <!-- Timer Page -->
+        
           <section class="bg-white rounded-xl shadow p-4 sm:p-6 hidden lg:block" id="timer-page">
             <h2 class="text-base sm:text-lg font-semibold mb-3">Timer Pomodoro</h2>
             <p class="text-xs text-gray-400 mb-4">
@@ -145,48 +145,14 @@
             </div>
           </section>
 
-          <!-- Stats Page (Right Side) -->
-          <section class="bg-white rounded-xl shadow p-4 sm:p-6 hidden lg:block" id="stats-page-right">
-            <h2 class="text-base sm:text-lg font-semibold mb-4">Statistiques</h2>
-
-            <div class="space-y-3">
-              <div class="bg-blue-50 rounded-lg p-4 flex items-center gap-4">
-                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                  <i class="fa-solid fa-bullseye text-blue-600 text-lg"></i>
-                </div>
-                <div>
-                  <p class="text-xl font-bold text-blue-600" id="stat-active">0</p>
-                  <p class="text-xs text-gray-500">Tâches actives</p>
-                </div>
-              </div>
-
-              <div class="bg-green-50 rounded-lg p-4 flex items-center gap-4">
-                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                  <i class="fa-solid fa-check text-green-600 text-lg"></i>
-                </div>
-                <div>
-                  <p class="text-xl font-bold text-green-600" id="stat-completed">0</p>
-                  <p class="text-xs text-gray-500">Terminées</p>
-                </div>
-              </div>
-
-              <div class="bg-purple-50 rounded-lg p-4 flex items-center gap-4">
-                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                  <i class="fa-solid fa-arrow-trend-up text-purple-600 text-lg"></i>
-                </div>
-                <div>
-                  <p class="text-xl font-bold text-purple-600" id="stat-success">0%</p>
-                  <p class="text-xs text-gray-500">Taux de réussite</p>
-                </div>
-              </div>
-            </div>
-          </section>
+        
+ 
 
         </div>
       </div>
     </main>
 
-    <!-- Bottom Navigation (Mobile Only) -->
+    
     <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t shadow-md z-50">
       <div class="flex justify-around items-center h-16">
         <button class="nav-btn flex flex-col items-center text-blue-600" data-page="tasks-page">

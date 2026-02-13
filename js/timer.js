@@ -8,7 +8,7 @@ export function initTimer() {
   const cycleCountEl = document.getElementById('cycle-count');
   const sessionStatus = document.getElementById('session-status').querySelector('span');
 
-  let workTime = 1 * 60; 
+  let workTime = 25 * 60; 
   let breakTime = 5 * 60; 
   let time = workTime;
   let interval = null;
