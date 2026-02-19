@@ -40,15 +40,14 @@ export function initTimer() {
     updateStartButton(true);
 
     interval = setInterval(() => {
-      if (time > 0) {
+      if(time > 0) {
         time--;
         updateDisplay();
       } else {
         clearInterval(interval);
         interval = null;
-          alarmSound.play();
+        alarmSound.play();
 
-    
         if (isWork) cycles++;
         isWork = !isWork;
         time = isWork ? workTime : breakTime;

@@ -19,6 +19,12 @@ export function renderTasks(container, tasks) {
     span.className = task.done ? 'line-through text-gray-400' : '';
     span.classList.add('flex-1');
 
+    const editBtn = document.createElement('button');
+    editBtn.className = 'task-edit text-blue-500 hover:text-blue-700 ml-2';
+    editBtn.dataset.taskId = task.id;
+    editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+
+
     const delBtn = document.createElement('button');
     delBtn.className = 'task-delete text-red-500 hover:text-red-700 ml-2';
     delBtn.dataset.taskId = task.id;
@@ -26,6 +32,7 @@ export function renderTasks(container, tasks) {
 
     li.appendChild(checkbox);
     li.appendChild(span);
+    li.appendChild(editBtn);
     li.appendChild(delBtn);
 
     container.appendChild(li);
